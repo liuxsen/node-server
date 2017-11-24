@@ -4,4 +4,5 @@ import user from '../controller/user'
 
 router.post('/modify/:uid', user.modifyUser);
 router.post('/add',user.add);
+router.post('/login',user.login);
 export default router;
