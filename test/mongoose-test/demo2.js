@@ -28,28 +28,22 @@ const school = schoolModel({
   name: '第一高中'
 });
 
-school.save(function (err) {
-  if (err) {
-    console.log(err);
-    return;
-  }
-  //创建了学生1
-  const student = studentModel({
-    name: '小红',
-    age: 16,
-    xuexiao: school._id //把学校的唯一id给绑定到学生身上。
-  });
-  student.save(function (err) {
-    if (err) console.log(err);
+studentModel
+  .findOne({
+    name: '小红'
+  })
+  .exec(function (err, student) {
+    console.log('id: ', student.xuexiao, 'name: ', student.xuexiao.name);
+    //id:  58ddd5db6216a905ce973de4 name:  undefined
+    //这里打印只有id，并没有属性
   });
 
-  //创建了学生2
-  const student2 = studentModel({
-    name: '小明',
-    age: 16,
-    xuexiao: school._id //把学校的唯一id给绑定到学生身上。
+studentModel
+  .findOne({
+    name: '小红'
+  })
+  .populate('xuexiao') //加上这句话也就有了属性值, 
+  .exec(function (err, student) {
+    console.log('id: ', student.xuexiao, 'name: ', student.xuexiao.name);
+    //id:  { _id: 58ddd5db6216a905ce973de4, name: '第一高中', __v: 0 } name:  第一高中
   });
-  student2.save(function (err) {
-    if (err) console.log(err);
-  });
-});

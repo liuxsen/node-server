@@ -1,6 +1,6 @@
-import userModel from '../models/user'
+import userModel from '../../models/user'
 import jwt from 'jsonwebtoken'
-import config from '../config/default'
+import config from '../../config/default'
 import md5 from 'md5'
 
 const generageToken = function generageToken(id){
