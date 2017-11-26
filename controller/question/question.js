@@ -54,6 +54,7 @@ class Question extends base {
                       .populate({ path: 'question_topic'})
       const answers = await answerModel
                       .find({ answer_question_id: question_id})
+                      .populate('answer_agree')
                       .skip(page_size*(page-1))
                       .limit(page_size)
       const result = {

@@ -10,7 +10,7 @@ const answerSchema = new Schema({
   answer_content: {type: String,required: true},
   answer_comment_id: { type: Schema.Types.ObjectId,ref:'Comment'},
   answer_user_id: {type: Schema.Types.ObjectId,ref: 'User'},
-  answer_praise: {type: Number,default: 0},//回答的赞  可以小于0
+  answer_agree: [{ type: Schema.Types.ObjectId, ref: 'User'}]//回答的赞  可以小于0
 })
 
 const Answer = mongoose.model('Answer', answerSchema);

@@ -1,5 +1,6 @@
 
 'use strict';
+import '../prototype/prototype'
 import user from './user'
 import topic from './topic'
 import question from './question'

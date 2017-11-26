@@ -74,10 +74,60 @@ user_education:[{"school": "a","domain": "bb"}]
 
 #### 参数类型
 
-| 参数                 | 是否必选 | 类型     | 说明      |
-|--------------------|------|--------|---------|
-| page_size | y    | string | 答案分页大小    |
-| page     | y    | string | 答案当前页码 |
+| 参数        | 是否必选 | 类型     | 说明     |
+|-----------|------|--------|--------|
+| page_size | y    | string | 答案分页大小 |
+| page      | y    | string | 答案当前页码 |
+
+#### 返回
+```js
+{
+    "question": {
+        "_id": "5a197eddb334d641dc84559d",
+        "question_title": "hello,js",
+        "question_description": "hello,js des",
+        "question_author": {
+            "_id": "5a17c0dc6e81a84e0cbc4837",
+            "user_name": "hehehhehehehhe",
+            "user_phone": "18295718145",
+            "user_password": "202cb962ac59075b964b07152d234b70",
+            "user_avatar": "slkdfjlskdfjlasjflasdf",
+            "__v": 0,
+            "user_education": [
+                {
+                    "school": "a",
+                    "domain": "bb",
+                    "_id": "5a17c0dc6e81a84e0cbc4838"
+                }
+            ]
+        },
+        "__v": 0,
+        "question_follows": [],
+        "question_anonymous": false,
+        "question_topic": [
+            {
+                "_id": "5a17c5220fc99444ccf5e238",
+                "topic_name": "js",
+                "topic_user": "5a17c0dc6e81a84e0cbc4837",
+                "__v": 0,
+                "topic_create_at": "2017-11-24T07:07:12.787Z"
+            }
+        ]
+    },
+    "answers": [
+        {
+            "_id": "5a198109693c854640146cc4",
+            "answer_question_id": "5a197eddb334d641dc84559d",
+            "answer_content": "如今手机已经成为人们的主要沟通工具了，在互联网发展的现阶段，人们也越来越依赖于移动设备，那么对于程序员来说，我们要做的产品、项目最多的也是移动端的app，那么在开发阶段中，我们如何测试移动端网页呢？有人说在手机上直接测试，这样的操作对于程序员来说是很麻烦的，也比较浪费效率，因为我们要修改一个语法就要启动一次手机测试，效率相对就比较低，那么如何在pc上进行移动端网页的测试呢，今天给大家提供以下几种方法：\n\n作者：千锋教育\n链接：https://www.zhihu.com/question/20322475/answer/264998038\n来源：知乎\n著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。",
+            "answer_user_id": "5a17c0dc6e81a84e0cbc4837",
+            "answer_praise": 0,
+            "__v": 0,
+            "answer_agree": [],
+            "answer_creat_at": "2017-11-25T14:41:13.179Z"
+        }
+    ]
+}
+```
 
 ### 4、关注一个问题
 
@@ -86,6 +136,18 @@ user_education:[{"school": "a","domain": "bb"}]
 
 #### 参数类型
 
-| 参数                 | 是否必选 | 类型     | 说明      |
-|--------------------|------|--------|---------|
-| question_id | y    | string | 问题id    |
+| 参数          | 是否必选 | 类型     | 说明   |
+|-------------|------|--------|------|
+| question_id | y    | string | 问题id |
+
+### 5、赞同回答
+
+#### api
+/answer/follow
+
+#### 参数类型
+
+| 参数        | 是否必选 | 类型     | 说明   |
+|-----------|------|--------|------|
+| answer_id | y    | string | 答案id |
+| agree     | y    | string | 1: 同意答案 2： 反对答案 |
