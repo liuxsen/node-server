@@ -71,6 +71,27 @@ class Question extends base {
     }
   }
 
+  //问题列表
+  async list(req,res,next){
+    try {
+      const pageSize = parseInt(req.body.page_size);
+      const page = parseInt(req.body.page-1);
+      const questionList = await questionModel
+        .find()
+        .sort('-question_update_at')
+        .populate('question_topic')
+        .populate('question_author')
+        .skip(pageSize * page)
+        .limit(10)
+      res.send({
+        error: 0,
+        data: questionList
+      })
+    } catch (error) {
+      res.send(error);
+    }
+  }
+
   // 关注一个问题
   async follow(req,res,next){
     if (await this.checkToken(req, res)) {
