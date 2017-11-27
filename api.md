@@ -1,6 +1,57 @@
 # user
 
+
+- [user](#user)
+  - [接口列表](#%E6%8E%A5%E5%8F%A3%E5%88%97%E8%A1%A8)
+    - [1、用户注册](#1%E3%80%81%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C)
+      - [请求URL:](#%E8%AF%B7%E6%B1%82url)
+      - [请求方法](#%E8%AF%B7%E6%B1%82%E6%96%B9%E6%B3%95)
+      - [参数类型](#%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B)
+      - [请求示例](#%E8%AF%B7%E6%B1%82%E7%A4%BA%E4%BE%8B)
+      - [返回](#%E8%BF%94%E5%9B%9E)
+    - [2、登录](#2%E3%80%81%E7%99%BB%E5%BD%95)
+      - [api](#api)
+      - [参数类型](#%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B)
+    - [3、回答问题](#3%E3%80%81%E5%9B%9E%E7%AD%94%E9%97%AE%E9%A2%98)
+      - [api](#api)
+      - [参数类型](#%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B)
+    - [4、查看问题详情](#4%E3%80%81%E6%9F%A5%E7%9C%8B%E9%97%AE%E9%A2%98%E8%AF%A6%E6%83%85)
+      - [api](#api)
+      - [参数类型](#%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B)
+      - [返回](#%E8%BF%94%E5%9B%9E)
+    - [5、关注一个问题](#5%E3%80%81%E5%85%B3%E6%B3%A8%E4%B8%80%E4%B8%AA%E9%97%AE%E9%A2%98)
+      - [api](#api)
+      - [参数类型](#%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B)
+    - [6、赞同回答](#6%E3%80%81%E8%B5%9E%E5%90%8C%E5%9B%9E%E7%AD%94)
+      - [api](#api)
+      - [参数类型](#%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B)
+    - [7、问题列表](#7%E3%80%81%E9%97%AE%E9%A2%98%E5%88%97%E8%A1%A8)
+      - [api](#api)
+      - [参数类型](#%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B)
+    - [8、新建收藏夹](#8%E3%80%81%E6%96%B0%E5%BB%BA%E6%94%B6%E8%97%8F%E5%A4%B9)
+      - [api](#api)
+      - [参数类型](#%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B)
+    - [9、删除收藏夹](#9%E3%80%81%E5%88%A0%E9%99%A4%E6%94%B6%E8%97%8F%E5%A4%B9)
+      - [api](#api)
+      - [参数类型](#%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B)
+    - [10、删除收藏夹内容](#10%E3%80%81%E5%88%A0%E9%99%A4%E6%94%B6%E8%97%8F%E5%A4%B9%E5%86%85%E5%AE%B9)
+      - [api](#api)
+      - [参数类型](#%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B)
+    - [11、收藏 内容 到 文件夹](#11%E3%80%81%E6%94%B6%E8%97%8F-%E5%86%85%E5%AE%B9-%E5%88%B0-%E6%96%87%E4%BB%B6%E5%A4%B9)
+      - [api](#api)
+      - [参数类型](#%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B)
+    - [12、查看文件夹list](#12%E3%80%81%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E5%A4%B9list)
+      - [api](#api)
+      - [参数类型](#%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B)
+    - [13、查看某个文件夹中的资源](#13%E3%80%81%E6%9F%A5%E7%9C%8B%E6%9F%90%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%AD%E7%9A%84%E8%B5%84%E6%BA%90)
+      - [api](#api)
+      - [参数类型](#%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B)
+    - [14、查看文件夹list](#14%E3%80%81%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E5%A4%B9list)
+      - [api](#api)
+      - [参数类型](#%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B)
+
 ## 接口列表
+
 
 ### 1、用户注册
 
@@ -129,7 +180,7 @@ user_education:[{"school": "a","domain": "bb"}]
 }
 ```
 
-### 4、关注一个问题
+### 5、关注一个问题
 
 #### api
 /question/follow
@@ -140,7 +191,7 @@ user_education:[{"school": "a","domain": "bb"}]
 |-------------|------|--------|------|
 | question_id | y    | string | 问题id |
 
-### 5、赞同回答
+### 6、赞同回答
 
 #### api
 /answer/follow
@@ -153,7 +204,7 @@ user_education:[{"school": "a","domain": "bb"}]
 | agree     | y    | string | 1: 同意答案 2： 反对答案 |
 
 
-### 6、问题列表
+### 7、问题列表
 
 #### api
 /question/list
@@ -167,7 +218,7 @@ user_education:[{"school": "a","domain": "bb"}]
 
 
 
-### 7、新建收藏夹
+### 8、新建收藏夹
 
 #### api
 /bookMark/add
@@ -180,7 +231,7 @@ user_education:[{"school": "a","domain": "bb"}]
 | booksMark_description | y    | string | 收藏夹描述   |
 | booksMark_isSecret    | y    | string | 收藏夹是否私密 |
 
-### 7、删除收藏夹
+### 9、删除收藏夹
 
 #### api
 /bookMark/delFolder
@@ -191,7 +242,7 @@ user_education:[{"school": "a","domain": "bb"}]
 |--------------|------|--------|-------|
 | booksMark_id | y    | string | 收藏夹id |
 
-### 7、删除收藏夹内容
+### 10、删除收藏夹内容
 
 #### api
 /bookMark/delete
@@ -202,7 +253,7 @@ user_education:[{"school": "a","domain": "bb"}]
 |--------------|------|--------|-------|
 | booksMark_id | y    | string | 收藏夹id |
 
-### 8、收藏 内容 到 文件夹
+### 11、收藏 内容 到 文件夹
 #### api
 /bookMark/delFolder
 
@@ -214,7 +265,7 @@ user_education:[{"school": "a","domain": "bb"}]
 | source_id | y    | string | 收藏内容id              |
 | booksMark_id | y    | string | 收藏夹id              |
 
-### 9、查看文件夹list
+### 12、查看文件夹list
 #### api
 /bookMark/
 
@@ -223,7 +274,7 @@ user_education:[{"school": "a","domain": "bb"}]
 | 参数           | 是否必选 | 类型     | 说明                   |
 |--------------|------|--------|----------------------|
 
-### 10、查看某个文件夹中的资源
+### 13、查看某个文件夹中的资源
 #### api
 /bookMark/f/:id
 
@@ -232,7 +283,7 @@ user_education:[{"school": "a","domain": "bb"}]
 | 参数           | 是否必选 | 类型     | 说明                   |
 |--------------|------|--------|----------------------|
 
-### 11、查看文件夹list
+### 14、查看文件夹list
 #### api
 /bookMark/list
 
@@ -240,3 +291,4 @@ user_education:[{"school": "a","domain": "bb"}]
 
 | 参数           | 是否必选 | 类型     | 说明                   |
 |--------------|------|--------|----------------------|
+
